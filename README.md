@@ -4,6 +4,7 @@ Node.js Database Query String Builder (QSB) for Mysql/MariaDB
 # Summary
 * node-qsb is very simple Database Query String Builder. create String object only. 
 * It is independent of the Database driver module.
+* Introduce Article : http://luckyyowu.tistory.com/345 (Korean)
 
 # Available DBMS
 * MySQL, MariaDB
