@@ -128,7 +128,7 @@ module.exports.prototype.whereOr = function(a, b, c) {
 
 module.exports.prototype.limit = function(a, b) {
 	if(this._limit.length == 0) { this._limit += " LIMIT "; }
-	this._limit += esc(a) + ", " + esc(b);
+	this._limit += a + ", " + b;
 	return this;
 }
 
