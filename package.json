@@ -1,6 +1,6 @@
 {
   "name": "node-qsb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js Simple Database Query String Builder (QSB) for MySQL/MariaDB",
   "main": "index.js",
   "scripts": {
