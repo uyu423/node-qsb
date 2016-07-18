@@ -91,7 +91,7 @@ qs.set('email', 'uyu423@gmail.com').build().printString();
 ```
 
 ## DELETE Query
-```
+```javascript
 var qsb = require('node-qsb');
 
 var qs = new qsb().delete('tableName')
