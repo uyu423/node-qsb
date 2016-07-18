@@ -1,4 +1,10 @@
-function bq(str) { return "`" + str + "`"; };	//add Back Quote
+function bq(str) { 
+	if(str.indexOf('.') > 0) {
+		str = str.split('.');
+		return "`" + str[0] + "`.`" + str[1] + "`";  
+	}
+	return "`" + str + "`"; 
+};	//add Back Quote
 function esc(str) { return "'" + str + "'"; };
 
 module.exports = function() {
