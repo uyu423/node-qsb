@@ -8,6 +8,9 @@ Node.js Database Query String Builder (QSB) for Mysql/MariaDB
 # Available DBMS
 * MySQL, MariaDB
 
+# Installation
+<pre>npm install node-qsb</pre>
+
 # Example
 ## SELECT Query
 ### Default
