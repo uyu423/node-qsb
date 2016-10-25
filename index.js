@@ -33,6 +33,7 @@ module.exports = function() {
 	this._where = "";
 	this._limit = "";
 	this._order = "";
+  this._group = "";
 	this._qs = "SELECT 'QUERY NOT BUILD'";
 };
 
@@ -149,17 +150,19 @@ module.exports.prototype.limit = function(a, b) {
 };
 
 module.exports.prototype.orderBy = function(col, sort) {
-	this._order += " ORDER BY " + bq(col) + " " + sort;
+	if(this._order.length !== 0) { this._order += ", "; }
+	if(this._order.length === 0) { this._order += " ORDER BY "; }
+	this._order += bq(col) + " " + sort;
 	return this;
 };
 
 module.exports.prototype.groupBy = function(col) {
-	this._order += " GROUP BY " + bq(col);
+	this._group += " GROUP BY " + bq(col);
 	return this;
 };
 
 module.exports.prototype.build = function() {
-	if(this._comm === "SELECT ") { this._qs = this._comm + (this._get.length === 0 ? "*" : this._get) + this._from + this._join + this._where + this._order + this._limit + ";"; }
+	if(this._comm === "SELECT ") { this._qs = this._comm + (this._get.length === 0 ? "*" : this._get) + this._from + this._join + this._where + this._order + this._group + this._limit + ";"; }
 	if(this._comm === "UPDATE ") { this._qs = this._comm + this._from + this._set + this._where + ";"; }
 	if(this._comm === "INSERT ") { this._qs = this._comm + this._from + this._cols + this._values + ";"; }
 	if(this._comm === "DELETE ") { this._qs = this._comm + this._from + this._where + ";"; }
